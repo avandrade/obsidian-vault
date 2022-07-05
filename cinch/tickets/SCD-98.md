@@ -165,4 +165,8 @@ Personas sends computed traits and audiences to destinations in different way de
 - With Audiences, Personas sends the audience either as a boolean (true or false) user property to Event Destinations, or a list to List Destinations. If you are B2B company creating account audiences (where each account represents a group of users, like employees at a business) and sending them to list destination, Personas sends the list of all users within an account that sastisfies the audience criteria 
 
 Event Destinations
-Event Destinati
+**Event Destinations and Computed Traits** Computed traits can only be sent to Event Destinations. When Personas sends a computed trait to an Event destination, it uses an identify call to send user traits or a group call to send account-level computed traits.
+
+
+**Event Destinations and Audiences**
+- **`identify`  call as a user trait** When you use identify calls, the trait name is the snake_cased version of the audience name you provided, and the value is "true" if the user is part of the audience.  For example, when a user first completes an order inthe last 30 days, Segment sends an identify call with property prd
