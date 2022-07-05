@@ -143,3 +143,5 @@ You can use this API to:
 - Empower your sales and support associates with the complete customer context by embedding the user profile in third-party tools like zendesk
 - power personalised marketing campaigns by enriching dynamic / custom properties with profile traits in marketing tools like Braze
 - qualify leads faster by embedding the user event timeline in Salesforce
+
+Using your Personas data
