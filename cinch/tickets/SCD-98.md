@@ -155,4 +155,10 @@ Tip! You can use the Personas Profile API to activate Personas data programmatic
 The table below includes the most important Personas Destinations the we support today, and which we consider industry-standard tool that most business use for personalisation and marketing. (this list does not include warehouses)
 
 ....
-the tabl
+the table went here
+....
+
+In addition to the most popular Personas Destinations, Segment  supports additional Destinations you can use in conjnction with Personas. These are the full list of Destinations that are compatible with Segment.
+
+Personas sends computed traits and audiences to destinations in different way depending on whether the destination is an Event or List type
+- Compute
