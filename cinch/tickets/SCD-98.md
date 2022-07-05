@@ -147,4 +147,12 @@ You can use this API to:
 ## Using your Personas data
 You can send your Personas Computed Traits and Audiences to your segment Destination, which allows you personalise messages across chanels, optimise ad spend and improve targeting. This page provides overview of different ways to activate Personas data in Segment Destinations
 
-C
+```
+Tip! You can use the Personas Profile API to activate Personas data programmatically.
+```
+
+### Compatible Personas Destinations
+The table below includes the most important Personas Destinations the we support today, and which we consider industry-standard tool that most business use for personalisation and marketing. (this list does not include warehouses)
+
+....
+the tabl
