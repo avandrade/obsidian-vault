@@ -161,4 +161,8 @@ the table went here
 In addition to the most popular Personas Destinations, Segment  supports additional Destinations you can use in conjnction with Personas. These are the full list of Destinations that are compatible with Segment.
 
 Personas sends computed traits and audiences to destinations in different way depending on whether the destination is an Event or List type
-- Compute
+- Computed Traits are always sent to Event destination either using Identify call for user trait, a group call for account-level computed trait or a track event
+- With Audiences, Personas sends the audience either as a boolean (true or false) user property to Event Destinations, or a list to List Destinations. If you are B2B company creating account audiences (where each account represents a group of users, like employees at a business) and sending them to list destination, Personas sends the list of all users within an account that sastisfies the audience criteria 
+
+Event Destinations
+Event Destinati
