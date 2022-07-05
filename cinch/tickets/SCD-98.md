@@ -169,4 +169,6 @@ Event Destinations
 
 
 **Event Destinations and Audiences**
-- **`identify`  call as a user trait** When you use identify calls, the trait name is the snake_cased version of the audience name you provided, and the value is "true" if the user is part of the audience.  For example, when a user first completes an order inthe last 30 days, Segment sends an identify call with property prd
+- **`identify`  call as a user trait** When you use identify calls, the trait name is the snake_cased version of the audience name you provided, and the value is "true" if the user is part of the audience.  For example, when a user first completes an order inthe last 30 days, Segment sends an identify call with property `order_completed_last_30days: true`, and when this user no longer satisfies that criteria (for example if the 30 days elapses and they haven't completed another order), Segment sets that value to False
+- **`track` call as two events** `Audience Entered` and `Audience Exited`, with the event property `order_completed_last_30days` equal to true and false, respectively.
+- 
