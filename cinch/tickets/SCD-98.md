@@ -144,4 +144,7 @@ You can use this API to:
 - power personalised marketing campaigns by enriching dynamic / custom properties with profile traits in marketing tools like Braze
 - qualify leads faster by embedding the user event timeline in Salesforce
 
-Using your Personas data
+## Using your Personas data
+You can send your Personas Computed Traits and Audiences to your segment Destination, which allows you personalise messages across chanels, optimise ad spend and improve targeting. This page provides overview of different ways to activate Personas data in Segment Destinations
+
+C
