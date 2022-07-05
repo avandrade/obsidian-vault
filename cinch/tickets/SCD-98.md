@@ -1,0 +1,145 @@
+SCD - 98 - [SPIKE] What can Segment Profile API give us (cinch)?
+
+### links:
+- miro - https://miro.com/app/board/uXjVOtipkNM=/?moveToWidget=3458764527631460560&cot=14
+- jira - https://cinch.atlassian.net/browse/SCD-98
+- confluence - TODO
+- https://segment.com/docs/personas/
+- https://segment.com/docs/personas/personas-gdpr/
+
+### Personas Overview
+Personas is a powerful personalisation platform that helps you create customer profiles.
+With personas you can build enrich and activate audiences across marketing tools
+
+#### What can you do with personas
+- Create unified customer profiles
+	- it uses [[segment identity Resolution]] to take vent data across different channels and merge them into a complete user/account level profiles
+	- this gives your org a sigle view of your customer base
+- Enrich profiles with new traits
+	- add detail to user profiles with new traits, and use them to power persnalised marketing campaigns. You can add new traits to your user or account profiles in segment usign:
+		- computed traits: Use the Personas drag-and-drop interface to build a per-user (B2C) or per account (B2B) metrics on user profiles (e.g. "lifetime value" or "lead score")
+		- SQL traits: Run custom queries on you DW usign the Personas SQL editor and import the results into Segment. With SQL traits, you can pull rich, uncaptured user data back into Segment
+- Build Audiences
+	- Create a list of users or accounts that match a specific criteria. For example, after creating an "innactive accounts" audience that list paid accoutns wit no login in 60 days, you can push the audience to your marketing and analytics tools.
+- Sync audiences to marketing tools
+	- Once you create your computed Traits and Audiences, Personas send them to your Segment destinations in just a few clicks. You can use these Traits and Audiences to personalise messages accros channels, optimise ad spend, and improve targeting. You can also use the Profile API to build in-app and onsite personalisation. Learn more about using Personas data and Profile API
+
+#### Personas core components
+The main parts of Personas are you Personas space(s), Audiences, the profile explorer and Traits
+
+- Personas Spaces
+	- A space is a separate Personas environment. There are 2 main reasons you might use spaces
+		- To separate your dev and prod environmets (highly recommended)
+		- To separate environements for distinct teams or geographical regions
+- Audiences
+	- An audiece is a list of either users or accounts that match a specific criteria. For example, Sement's Marketing team might build an active signups audience for an email marketing campaign. This Audience could contain all users who signed up in the last seven days and added a source within seven days of signing up.
+- Profile Explorer and Traits
+	- The profile explorer is a single view of your customers in Personas. Traits are users or accounts atributes that you can see inthe Profile Explorer
+		- The Profile Explorer contains all data that you have on a user, from their event history to their traits and identifiers
+		- Computed Traits are per-user or per-account traits that you create or "compute" in Personas using drag-and-drop interface. When you build a computed trait, Personas adds it to relevant user profiles. Personas recomputes these traits once an hour to make sure they are always accurate
+		- SQL Traits are per-user or per-account traits that you create by running queries against your DW, which can include data not captured using segment implementation. Segment imports the results into Personas, and appends these traits to the user profile. Personas recomputes these traits every 12 hours to ensure accuracy.
+		- Custom Traits are user or accoutn properties collected from all events you send to Personas. For example you can add any properties that you send as part of your track calls or identify calls (emails, first_name, last_name) as custom traits. You can view them in the Profile explorer and use them in your Audiences, Computed Traits and SQL Traits
+
+### Personas Quickstart Guide
+#### Personas Configuration Requirements
+Personas is and add-on product that works alongside the core Segment connections product. Before you set up Personas, you must first set up and configure Segment Conections
+
+To configure and use Personas, you need the following:
+1. A Segment account and Workspace
+2. Events flowing into connections from you digital properties where most of your valuable user behaviour accurs
+3. Personas Administrator access. You must be either a workspace admin, or a workspace user with Personas Admin access to setup Audiences and computed trait. You can check your permissions by navigating to access management
+
+#### Step 1: Create a New Developer Space
+When starting working with Personas, you should start by creating a "Developer" Personas  space. This is your experimental and test evironement while you learn more about how Personas work. You can validate and identify resolution is working correctly, test audiences and traits in the Dev space and then apply the change to your "Prod" environment. This two-space method prevents you from making untested configuration changes that immediately affect PROD data
+
+#### Step 2: Invite teammates to your Personas Space
+Invite teammates to your Personas dev space and rant them access to the space
+
+#### Step 3: Connect Production Sources
+1. From your Personas space, go to your Space settings and click sources
+2. On the screen that appears, choose one or two production sources from your Connections workspace. We recomment connecting your prod website or App source as a great starting point.
+Once you select sources, Segment starts a replay of one month historical data from these sources into your Personas space. we're doing this step first so you have some user data in Personas to build your first audiences nd computed Traits.
+
+The replay usually takes several hours, but the duration will vary depending on how much data you have sent through these sources in the past one month. When the replay finishes you are notified in the Sources tab under settings
+
+#### Step 4: Check your Profile data
+Once the replay finishes, you can see the data replayed into Personas using the Profile Explorer. You should have a lot! The data should include information from multiple sources and multiple sessions, all resolved into a single profile user. Before continuing, check a few user profiles to make sure they show an accurate and recent snapshot of your users.
+
+#### Step 5: Create an Audience
+You can build an audience using any of source data that flows into your Personas space. To furhter verify your data, in this step create an Audience that you are familiar with and that you already have a rough idea of the size of. For example, you might know the number of new website user sign-ups in the last 7 days, if you've connected our productin website source to Personas.
+
+The Audience Builder UI prompts you to filter your users using on specific behaviours that they performed. The audience in the example below is all the users who have performed the event `User Signed Up` at least one time in the last 7 days
+
+#### Step 6: Connect the Audience to a Destination
+Once you create your test audience, click `Select Destinations`. Personas guides you through configurations steps to setuo a destination for your audeince. 
+The larger the audience you're creating, the longer it takes Personas to successfully compute te Audience. Te Audience page shows a status that indicates if the Audience overview, as in this example screenshot bel ow, the audience has 
+
+#### Step 7: Validate taht your audience is appearing in your destination
+Audiences are either sent to destinations as a boolean user-property (for example New_Users_7days=true or a user-list depending on what the destination supports)
+
+The UI for the destination tools you send the audience data to are different, so the process of validating the audience varies per tool. However, the guiding principle is the same. You should be able to identify te full group of users who are members of your audience in your destination
+
+#### Step 8: Create your production Space
+Once you validate that your full audience is arriving in your destination, you are ready to create a Production space. we recommend you repeat the same steps outlined aove, focusing on your production use cases and data sources.
+
+## Personas Identity Resolution
+### Overview
+#### Identity Graph
+Identity Resolution sits at the core of Personas. The Segment Identity Graph merges the complete history of each customer into a single profile, no matter where they interact with your business. Identity Resolution allows you to understand a user's interaction across web, mobile, server and third party partner touch-points in real time using an online and offline ID graph with support from cookie IDs, device IDs, email, and custom external IDs. If you are sending the `group` call, you can also understand user behaviour at the account level.
+
+Highlights
+1. Supports existing data - no additional code or setup required
+2. Supports all channels - stitches web + mobile + server + third party interactionsn into the same user
+3. Supports anonymous identity stitching - by merging child sessions into parent sessions
+4. Supports user:account relationship - for b2b companies, generates a graph of relationships between users and accounts
+5. Realtime - merges realtime data streams, tested at 50,000 resolutions/sec with a P95 resolve duration of 7ms
+
+Technical Highlights
+1. Supports custom external IDs - bring you own external  IDs
+2. Customisable ID Rules - allows you to enforce uniqueness on select external IDs and customise which external IDs and sources cause associations
+3. Merge protection - automatically detects and solves identity issues such as non-unique anonymous IDs and the library problem using our priority trust algorithm 
+4. Maintains persistent ID - multiple external IDs get matched to one peristent ID
+
+### Identity Resolution Onboarding
+Segment creates and merges user profiles based on space's identity resolution configuration. Segment searches for identifiers such as userId, anonymousId and email on incoming events and matches them to existing profiles or creates new profiles. These identifiers display in the identities tab of a User Profile in the User Explorer.
+
+#### Flat matching logic
+When Personas receive a new event, Segment looks for profiles that match any of the identifiers on the event.
+Based on teh existence of a match, one of the three actions can occur
+
+1. **Create a new profile** when there are no pre-existing profiles that have matching identifiers to the event, Segment creates a new user profile
+2. **Add to existing profile** When there is one profile that matches all identifiers in an event, segment attemps to map the traits, identifiers and events on the call to that existing profile. If there is an excess of any identifier on the final profile, Segment defers to the Identity Resolution rules outlined below
+3. **Merge existing existing profiles** When there are multiple profiles that match the identifiers in an event, Segment checks the Identity resolution rules outlined below and attempts to merge profiles
+
+#### Identity Resolution Settings
+Identity Admins should first configure Identity Resolution Settings to protect the identity graph from inaccurate merges and user profiles.
+
+During the space creation process, the first step is to choose an Identity Resolution cnfiguratio. If this is your first space, you have the option to choose a segment suggested Out-of-the-box configuration or a custom Identity Resolution setup. All other spaces have a third option of importing setting from a different space
+....
+when you choose the limit on an identifier, ask the following questions about each of the identifier you send to segment:
+1. Is it an immutable ID? An immutable ID such as user_id, should have 1 ever per user profile
+2. Is it a constantly changing ID? A constantly changing ID, such as anonymous_id or ga_client_id, should have a short sliding window, such as 5 weeks or 5 months, depending on how often your application automatically logs the user
+3. Is it an ID that updates ona yearly basis? Most customers will have around 5 emails or devices at any one time, but can update these over time. For identifiers like email, android.id, or ios.id, Segment recommends a longer limit like 5 annually.
+
+**Priority**
+Segment considers the priority of an identifier once that identifier exceeds the limit on the final profile
+
+### Identity Resolution Use-Cases
+The Personas Identity Resolution feature helps to create a unified view of the user across devices, apps, and unique identifiers. Identity Resolution is critical in understanding the customer journey at multiple touch points, which allows brands to deliver personalised experiences to its customers at scale.
+
+**Anonymous to known Identification**
+
+
+.......
+
+skipped in the interest of time
+........
+
+## Personas Profile API
+The Segment Profile API provides a single API to read user-level and account level customer data. Segment now allows you to query the entire user or account object programmatically, including the external_ids, traits, and events that make up a users's journey through your product
+
+You can use this API to:
+- Build an in-app recommendation engine to show users or acounts the last five products they viewed but didn't purchase
+- Empower your sales and support associates with the complete customer context by embedding the user profile in third-party tools like zendesk
+- power personalised marketing campaigns by enriching dynamic / custom properties with profile traits in marketing tools like Braze
+- qualify leads faster by embedding the user event timeline in Salesforce
