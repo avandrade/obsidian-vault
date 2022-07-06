@@ -214,4 +214,6 @@ blah blah blah! not interested
 ....
 
 ## Personas and Warehouse
+Personas provides a complete, up-to-date view of your users csutomer journey as it unfolds, and one of the best ways to understand the data produced by this journey is by analysing the data in your data warehouse using SQL.
 
+With Personas, you can send computed Traits and Audiences to a data warehouse like Resdhift, BigQuery and Snowflake. This allows you to perform analysis and reporting around key customer audiences and campaigns 
