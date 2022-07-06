@@ -178,4 +178,10 @@ List destinations can only receive Audiences and cannot receive computed traits
 - Account-level Audiences: A list of users within an account that satisfies the audience criteria
 When syncing to List destination Personas uploads lists of users directly to the destination. When you first create an audience, Segment uploads the entire list of audience users to the destination. Later syncs only uploads the users that have been added or removed since the last sync.
 
-User list destinations can have individual limits on how often Segment can sync with them. For example, an AdWorks audience is updated once every six hours, because that is what Ad
+User list destinations can have individual limits on how often Segment can sync with them. For example, an AdWorks audience is updated once every six hours, because that is what AdWorks recommends
+
+### What do the payloads look like for Personas data?
+The payload sent from your Personas space to your destinations will be different depending on if you configured the destination to receive identify or track calls, and whether the payload is coming from a computed trait or audience.
+As a reminder, Identify calls usually  update a trait on a user profile or table, whereas track calls send a point-in-time event that can be used as campaign trigger or detailed record of when a user's audience membershio or computed trait value was calculated.
+
+#### Computed Trait Generated Events
