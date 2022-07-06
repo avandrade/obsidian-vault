@@ -204,4 +204,6 @@ There are 2 situations when Personas sends an audience or computed trait to a de
 
 The first is when the value of the trait or audience changes
 
-The second, less common case is that Personas re-syncs audience or computed trait when a new external_id is added to a profile. For example, an e-c ommerce company has an anonymous visitor with a computed trait called `last_viewed_category = 'Shoes'`. That visitot then creates an account and an email address is added to the profile, Personas re-syncs the computed trait 
+The second, less common case is that Personas re-syncs audience or computed trait when a new external_id is added to a profile. For example, an e-c ommerce company has an anonymous visitor with a computed trait called `last_viewed_category = 'Shoes'`. That visitot then creates an account and an email address is added to the profile, Personas re-syncs the computed trait that includes an email to downstream tools. This allows the ecommerce company to start personolising the user's experience from a more complete profile
+
+### Rate Limits on Personas Destinations
