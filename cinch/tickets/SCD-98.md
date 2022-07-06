@@ -175,4 +175,7 @@ Event Destinations
 ### List Destinations
 List destinations can only receive Audiences and cannot receive computed traits
 - User-Level Audiences: A list of users that belong to an audience
-- Account
+- Account-level Audiences: A list of users within an account that satisfies the audience criteria
+When syncing to List destination Personas uploads lists of users directly to the destination. When you first create an audience, Segment uploads the entire list of audience users to the destination. Later syncs only uploads the users that have been added or removed since the last sync.
+
+User list destinations can have individual limits on how often Segment can sync with them. For example, an AdWorks audience is updated once every six hours, because that is what Ad
