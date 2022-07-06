@@ -230,5 +230,14 @@ When you send computed traits as an identify call, Personas sends a similat call
 
 ### Warehouse schema for Personas identify call
 Personas identify calls appear in your data warehouse using a similar format as normal connections identify calls. Personas identyfy calls appear in two tables per Persona space
-These tables are named with a prefix of personas_, then the Personas space na
+These tables are named with a prefix of personas_, then the Personas space name followed by the identifies or users.
+The identifies table contains a record of every identify call, and the users table contains one record per user_id with the most recent value
+The personas_ schema name is specific to the Personas space and cannot be modified.
+Additional audiences and computed traits appear as additional coumns in these tables
+
+`personas_default.identifies` 
+`personas_default.users`
+
+#### Track calls for audiences
+
 
