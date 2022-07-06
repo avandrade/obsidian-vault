@@ -197,4 +197,11 @@ As a reminder, Identify calls usually  update a trait on a user profile or table
 Personas has a flexible flexible identity resolution layer that allows you to build user profiles based on multiple identifiers like user_id, email, mobile advertisingId, etc.Howerver different destinations may require different jeys , so theu can to their own matching and identification. For example Zendesk reequires that you include name property. Personas inludes logic to automatically enrich payloads going to there destinations with required keys.
 
 ### Multiple identifier of the same type
-You might also see that profiles that have multiple values for the same externl_id type, for example a profile might have multiple email addresses. When this happens, Personas sends one event per email for each audience or computed trait 
+You might also see that profiles that have multiple values for the same externl_id type, for example a profile might have multiple email addresses. When this happens, Personas sends one event per email for each audience or computed trait event. This ensures that all downstream email-based profiles receive the complete audience or computed trait.
+
+### New external identifiers added to a profile
+There are 2 situations when Personas sends an audience or computed trait to a destnation
+
+The first is when the value of the trait or audience changes
+
+The second, less common case is that Personas re-syncs audience or computed trait when a new external_id is added to a profile. For example, an e-c ommerce company has an anonymous visitor with a computed trait called `last_viewed_category = 'Shoes'`. That visitot then creates an account and an email address is added to the profile, Personas re-syncs the computed trait 
