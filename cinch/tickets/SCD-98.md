@@ -225,4 +225,10 @@ If you choose to send your personas data as identify call, Personas usually send
 
 When you send audiences as an Identify call, Personas includes a boolean trait that matches the name of the audience. When a user enters an audience the boolean is set to true and when they exit the boolean is set to false.
 
+### Identify call for computed traits
+When you send computed traits as an identify call, Personas sends a similat call with the computed value for that trait. In the example below, the trait total_revenue_180_days includes the calculated value of 450.00
+
+### Warehouse schema for Personas identify call
+Personas identify calls appear in your data warehouse using a similar format as normal connections identify calls. Personas identyfy calls appear in two tables per Persona space
+These tables are named with a prefix of personas_, then the Personas space na
 
