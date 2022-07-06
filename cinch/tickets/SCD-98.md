@@ -216,4 +216,13 @@ blah blah blah! not interested
 ## Personas and Warehouse
 Personas provides a complete, up-to-date view of your users csutomer journey as it unfolds, and one of the best ways to understand the data produced by this journey is by analysing the data in your data warehouse using SQL.
 
-With Personas, you can send computed Traits and Audiences to a data warehouse like Resdhift, BigQuery and Snowflake. This allows you to perform analysis and reporting around key customer audiences and campaigns 
+With Personas, you can send computed Traits and Audiences to a data warehouse like Resdhift, BigQuery and Snowflake. This allows you to perform analysis and reporting around key customer audiences and campaigns, as well as set up your user data as imput into predictive models
+
+Segment makes it easy to load your customer profile data into a clean schema so your analysts can help answer some of your toughest business questions.
+
+### Identify calls for adiences
+If you choose to send your personas data as identify call, Personas usually sends one call per user.
+
+When you send audiences as an Identify call, Personas includes a boolean trait that matches the name of the audience. When a user enters an audience the boolean is set to true and when they exit the boolean is set to false.
+
+
