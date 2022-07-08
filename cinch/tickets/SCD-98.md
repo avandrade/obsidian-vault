@@ -264,3 +264,13 @@ Personas currently supports the following types of computed traits
 
 
 
+### While playing with Segment and dev cinch website
+
+- Events involved in searches 
+	- Viewed "find_vehicle" Page
+	- Find Vehicle - Filter panel
+	- Find Vehicle - 2 free text input
+	- Find Vehicle - 1 free text input
+	- Find Vehicle - 3 free text input
+
+
