@@ -241,3 +241,7 @@ Additional audiences and computed traits appear as additional coumns in these ta
 #### Track calls for audiences
 
 
+## Computed Traits
+Computed Traits allow you to quickly create user or account-level calculations that Segment keeps up-to-date over time 
+
+

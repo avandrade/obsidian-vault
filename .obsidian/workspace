@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "mlpath/path.md",
+            "file": "cinch/tickets/SCD-98.md",
             "mode": "source",
             "source": true
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "mlpath/path.md",
+                "file": "cinch/tickets/SCD-98.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,8 +89,8 @@
   },
   "active": "868e8c7fa5ae5a6f",
   "lastOpenFiles": [
-    "mlpath/path.md",
     "cinch/tickets/SCD-98.md",
+    "mlpath/path.md",
     "segment identity Resolution.md",
     "Readme.md"
   ]
