@@ -259,6 +259,8 @@ Personas currently supports the following types of computed traits
 	- Unique List Count
 -  Conditions
 - Connecting your computed traits to a Destination
-- 
+- Accessing your Computed Traits using the Prifiles API
+- Downloading you Computed Traits as a CSV
+
 
 
