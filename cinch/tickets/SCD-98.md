@@ -242,6 +242,23 @@ Additional audiences and computed traits appear as additional coumns in these ta
 
 
 ## Computed Traits
-Computed Traits allow you to quickly create user or account-level calculations that Segment keeps up-to-date over time 
+Computed Traits allow you to quickly create user or account-level calculations that Segment keeps up-to-date over time.
+
+These can be computations like the total_number_of_orders a customer has completed, the lifetime_revenue of a customer, the most_frequent_user to determine which user is most active in an account, or the unique_visitors_count to assess how many visitors from a single domain. These computations are based on your events and event properties that you are sending through Segment on the page and track calls.
+
+
+### Types of Computed Traits
+Personas currently supports the following types of computed traits
+- Types of Computed Traits
+	- Event Counter
+	- Aggregation
+	- Most Frequent
+	- First
+	- Last
+	- Unique List
+	- Unique List Count
+-  Conditions
+- Connecting your computed traits to a Destination
+- 
 
 
