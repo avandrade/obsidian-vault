@@ -268,7 +268,15 @@ Personas currently supports the following types of computed traits
 
 - Events involved in searches 
 	- Viewed "find_vehicle" Page
+		- page_name -> find_vehicle
+		- path/ -> find-vehicle
+		- search -> ?bodyType=&colour=&doors=&driveType=&features=&fromEngineSize=-1&fromPrice=-1&fromYear=-1&fuelType=&make=Ford&mileage=-1&pageNumber=1&pageSize=32&seats=&selectedModel=Mondeo&sortingCriteria=2&tags=&toEngineSize=-1&toPrice=-1&toYear=-1&transmissionType=&useMonthly=false&variant=
+		- url -> https://cambridge.preview.aws.cinch.co.uk/find-vehicle?bodyType=&colour=&doors=&driveType=&features=&fromEngineSize=-1&fromPrice=-1&fromYear=-1&fuelType=&make=Ford&mileage=-1&pageNumber=1&pageSize=32&seats=&selectedModel=Mondeo&sortingCriteria=2&tags=&toEngineSize=-1&toPrice=-1&toYear=-1&transmissionType=&useMonthly=false&variant=
 	- Find Vehicle - Filter panel
+		- path -> /find-vehicle
+		- search -> ?bodyType=&colour=&doors=&driveType=&features=&fromEngineSize=-1&fromPrice=-1&fromYear=-1&fuelType=&make=BMW&mileage=-1&pageNumber=1&pageSize=32&seats=&selectedModel=3%20Series&sortingCriteria=2&tags=&toEngineSize=4049&toPrice=-1&toYear=-1&transmissionType=manual&useMonthly=false&variant=
+		-  url -> https://cambridge.preview.aws.cinch.co.uk/find-vehicle?bodyType=&colour=&doors=&driveType=&features=&fromEngineSize=-1&fromPrice=-1&fromYear=-1&fuelType=&make=BMW&mileage=-1&pageNumber=1&pageSize=32&seats=&selectedModel=3%20Series&sortingCriteria=2&tags=&toEngineSize=4049&toPrice=-1&toYear=-1&transmissionType=manual&useMonthly=false&variant=
+
 	- Find Vehicle - 2 free text input
 	- Find Vehicle - 1 free text input
 	- Find Vehicle - 3 free text input
