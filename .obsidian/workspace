@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "cinch/tickets/SCD-98.md",
+            "file": "accenture/links.md",
             "mode": "source",
             "source": true
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "cinch/tickets/SCD-98.md",
+                "file": "accenture/links.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,6 +89,7 @@
   },
   "active": "868e8c7fa5ae5a6f",
   "lastOpenFiles": [
+    "accenture/links.md",
     "cinch/tickets/SCD-98.md",
     "mlpath/path.md",
     "segment identity Resolution.md",
