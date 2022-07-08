@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "accenture/links.md",
+            "file": "general/dev stuff/Git Lens.md",
             "mode": "source",
             "source": true
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "accenture/links.md",
+                "file": "general/dev stuff/Git Lens.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,6 +89,7 @@
   },
   "active": "868e8c7fa5ae5a6f",
   "lastOpenFiles": [
+    "general/dev stuff/Git Lens.md",
     "accenture/links.md",
     "cinch/tickets/SCD-98.md",
     "mlpath/path.md",
