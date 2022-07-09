@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "general/dev stuff/Git Lens.md",
+            "file": "mlpath/tensorflow.md",
             "mode": "source",
             "source": true
           }
@@ -53,7 +53,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 194
+    "width": 194,
+    "collapsed": true
   },
   "right": {
     "id": "9942ed696049db31",
@@ -69,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "general/dev stuff/Git Lens.md",
+                "file": "mlpath/tensorflow.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,10 +90,11 @@
   },
   "active": "868e8c7fa5ae5a6f",
   "lastOpenFiles": [
+    "mlpath/tensorflow.md",
+    "mlpath/path.md",
     "general/dev stuff/Git Lens.md",
     "accenture/links.md",
     "cinch/tickets/SCD-98.md",
-    "mlpath/path.md",
     "segment identity Resolution.md",
     "Readme.md"
   ]
